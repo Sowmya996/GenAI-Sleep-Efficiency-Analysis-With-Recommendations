@@ -1,0 +1,542 @@
+assesssment.html
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sleep Assessment | SleepWell</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌙 SleepWell
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/assessment">Sleep Assessment</a>
+    </div>
+
+</nav>
+
+
+<!-- ASSESSMENT -->
+
+<div class="assessment-container">
+
+    <div class="assessment-header">
+
+        <p class="tagline">
+            SLEEP HEALTH ASSESSMENT
+        </p>
+
+        <h1>
+            Tell us about your sleep
+        </h1>
+
+        <p>
+            Answer the questions below to help us understand
+            your sleep pattern, lifestyle and general health.
+        </p>
+
+    </div>
+
+
+    <form action="/predict"
+          method="POST"
+          class="assessment-form">
+
+
+        <!-- =====================================
+             PERSONAL INFORMATION
+        ====================================== -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span>👤</span>
+
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Basic information about you</p>
+                </div>
+
+            </div>
+            <div class="input-group">
+
+    <label>Full Name</label>
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Enter your full name"
+        required
+    >
+
+</div>
+
+
+            <div class="form-grid">
+
+
+                <!-- GENDER -->
+
+                <div class="input-group">
+
+                    <label>Gender</label>
+
+                    <select name="gender" required>
+
+                        <option value=""
+                                disabled
+                                selected>
+                            Select gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- AGE -->
+
+                <div class="input-group">
+
+                    <label>Age</label>
+
+                    <input type="number"
+                           name="age"
+                           min="18"
+                           max="100"
+                           placeholder="Example: 25"
+                           required>
+
+                </div>
+
+
+                <!-- OCCUPATION -->
+
+                <div class="input-group">
+
+                    <label>Occupation</label>
+
+                    <select name="occupation" required>
+
+                        <option value=""
+                                disabled
+                                selected>
+                            Select occupation
+                        </option>
+
+                        <option value="Doctor">
+                            Doctor
+                        </option>
+
+                        <option value="Engineer">
+                            Engineer
+                        </option>
+
+                        <option value="Lawyer">
+                            Lawyer
+                        </option>
+
+                        <option value="Nurse">
+                            Nurse
+                        </option>
+
+                        <option value="Teacher">
+                            Teacher
+                        </option>
+
+                        <option value="Accountant">
+                            Accountant
+                        </option>
+
+                        <option value="Salesperson">
+                            Salesperson
+                        </option>
+
+                        <option value="Software Engineer">
+                            Software Engineer
+                        </option>
+
+                        <option value="Scientist">
+                            Scientist
+                        </option>
+
+                        <option value="Manager">
+                            Manager
+                        </option>
+
+                        <option value="Sales Representative">
+                            Sales Representative
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BMI -->
+
+                <div class="input-group">
+
+                    <label>BMI Category</label>
+
+                    <select name="bmi" required>
+
+                        <option value=""
+                                disabled
+                                selected>
+                            Select BMI category
+                        </option>
+
+                        <option value="Normal">
+                            Normal
+                        </option>
+
+                        <option value="Normal Weight">
+                            Normal Weight
+                        </option>
+
+                        <option value="Overweight">
+                            Overweight
+                        </option>
+
+                        <option value="Obese">
+                            Obese
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             SLEEP INFORMATION
+        ====================================== -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span>🌙</span>
+
+                <div>
+                    <h2>Sleep Information</h2>
+                    <p>Tell us about your sleeping habits</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <!-- SLEEP DURATION -->
+
+                <div class="input-group">
+
+                    <label>
+                        Sleep Duration (hours)
+                    </label>
+
+                    <input type="number"
+                           name="sleep_duration"
+                           step="0.1"
+                           min="1"
+                           max="15"
+                           placeholder="Example: 7.5"
+                           required>
+
+                    <small class="input-help">
+                        Enter approximately how many hours
+                        you sleep each night.
+                    </small>
+
+                </div>
+
+
+                <!-- SLEEP QUALITY -->
+
+                <div class="input-group">
+
+                    <label>
+                        How would you rate your sleep quality?
+                    </label>
+
+                    <select name="quality_sleep" required>
+
+                        <option value=""
+                                disabled
+                                selected>
+                            Select your sleep quality
+                        </option>
+
+                        <option value="1">
+                            1 - Extremely Poor
+                        </option>
+
+                        <option value="2">
+                            2 - Very Poor
+                        </option>
+
+                        <option value="3">
+                            3 - Poor
+                        </option>
+
+                        <option value="4">
+                            4 - Below Average
+                        </option>
+
+                        <option value="5">
+                            5 - Slightly Poor
+                        </option>
+
+                        <option value="6">
+                            6 - Fair
+                        </option>
+
+                        <option value="7">
+                            7 - Good
+                        </option>
+
+                        <option value="8">
+                            8 - Very Good
+                        </option>
+
+                        <option value="9">
+                            9 - Excellent
+                        </option>
+
+                        <option value="10">
+                            10 - Excellent
+                        </option>
+
+                    </select>
+
+                    <small class="input-help">
+                        Consider how easily you fall asleep,
+                        how often you wake during the night,
+                        and how refreshed you feel after waking.
+                    </small>
+
+                </div>
+
+
+                <!-- STRESS -->
+
+                <div class="input-group">
+
+                    <label>
+                        Stress Level (1–10)
+                    </label>
+
+                    <select name="stress" required>
+
+                        <option value=""
+                                disabled
+                                selected>
+                            Select stress level
+                        </option>
+
+                        <option value="1">1 - Very Low</option>
+                        <option value="2">2 - Very Low</option>
+                        <option value="3">3 - Low</option>
+                        <option value="4">4 - Mild</option>
+                        <option value="5">5 - Moderate</option>
+                        <option value="6">6 - Moderate</option>
+                        <option value="7">7 - High</option>
+                        <option value="8">8 - High</option>
+                        <option value="9">9 - Very High</option>
+                        <option value="10">10 - Extremely High</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PHYSICAL ACTIVITY -->
+
+                <div class="input-group">
+
+                    <label>
+                        Physical Activity Level
+                    </label>
+
+                    <input type="number"
+                           name="physical_activity"
+                           min="0"
+                           max="100"
+                           placeholder="Example: 60"
+                           required>
+
+                    <small class="input-help">
+                        Enter the activity-level value used by
+                        the assessment model (0–100).
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             HEALTH AND ACTIVITY
+        ====================================== -->
+
+        <div class="form-section">
+
+            <div class="section-title">
+
+                <span>❤️</span>
+
+                <div>
+                    <h2>Health & Activity</h2>
+                    <p>Additional health information</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <!-- BLOOD PRESSURE -->
+
+                <div class="input-group">
+
+                    <label>
+                        Blood Pressure
+                    </label>
+
+                    <input type="text"
+                           name="blood_pressure"
+                           placeholder="Example: 120/80"
+                           pattern="[0-9]{2,3}/[0-9]{2,3}"
+                           required>
+
+                    <small class="input-help">
+                        Enter systolic/diastolic pressure,
+                        for example 120/80.
+                    </small>
+
+                </div>
+
+
+                <!-- HEART RATE -->
+
+                <div class="input-group">
+
+    <label>
+        Heart Rate (bpm)
+    </label>
+
+    <input
+        type="number"
+        name="heart_rate"
+        min="30"
+        max="200"
+        placeholder="Example: 72"
+        required
+    >
+
+    <small class="input-help">
+        Normal resting heart rate: <strong>60–100 bpm</strong><br>
+        Allowed range: <strong>30–200 bpm</strong>
+    </small>
+
+</div>
+
+
+                <!-- DAILY STEPS -->
+
+                <div class="input-group">
+
+                    <label>
+                        Daily Steps
+                    </label>
+
+                    <input type="number"
+                           name="daily_steps"
+                           min="0"
+                           max="50000"
+                           placeholder="Example: 7000"
+                           required>
+
+                    <small class="input-help">
+                        Enter your approximate average number
+                        of steps per day.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+
+        <div class="assessment-note">
+
+            <span>ℹ️</span>
+
+            <p>
+                This assessment provides educational information
+                based on a machine-learning model. It does not
+                provide a medical diagnosis.
+            </p>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button type="submit"
+                class="analyse-btn">
+
+            Analyse My Sleep
+
+            <span>→</span>
+
+        </button>
+
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

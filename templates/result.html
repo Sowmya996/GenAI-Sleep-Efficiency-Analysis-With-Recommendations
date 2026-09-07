@@ -1,0 +1,1155 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Your Sleep Result | SleepWell</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌙 SleepWell
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/assessment">
+            Sleep Assessment
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     RESULT CONTAINER
+========================= -->
+
+<div class="result-container">
+
+
+    <!-- RESULT HEADING -->
+
+    <div class="result-heading">
+
+        <p class="tagline">
+            YOUR SLEEP HEALTH REPORT
+        </p>
+
+        <h1>
+            Your Assessment Result
+        </h1>
+
+        <p>
+            Based on the sleep and lifestyle
+            information you provided.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         HEALTHY RESULT
+    ====================================== -->
+
+    {% if prediction == "Healthy" %}
+
+    <div class="prediction-card healthy-result">
+
+        <div class="result-icon">
+            😴
+        </div>
+
+        <p class="result-small">
+            YOUR RESULT
+        </p>
+
+        <h2>
+            Healthy Sleep Pattern
+        </h2>
+
+        <p>
+            Your information currently resembles
+            the healthy sleep patterns represented
+            in our machine-learning model.
+        </p>
+
+    </div>
+
+
+    <!-- HEALTHY RECOMMENDATIONS -->
+
+    <div class="result-section">
+
+        <h2>
+            🌙 Maintain Your Sleep Health
+        </h2>
+
+        <p class="section-description">
+            Continue maintaining healthy sleep and
+            lifestyle habits.
+        </p>
+
+
+        <div class="tip-grid">
+
+
+            <div class="tip-card">
+
+                🕐
+
+                <h3>
+                    Sleep Schedule
+                </h3>
+
+                <p>
+                    Try to sleep and wake at
+                    consistent times every day.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🥗
+
+                <h3>
+                    Balanced Food
+                </h3>
+
+                <p>
+                    Maintain regular balanced meals
+                    and avoid very heavy meals
+                    immediately before bedtime.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🏃
+
+                <h3>
+                    Stay Active
+                </h3>
+
+                <p>
+                    Regular daytime physical activity
+                    can support healthy sleep and
+                    overall wellbeing.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                📱
+
+                <h3>
+                    Wind Down
+                </h3>
+
+                <p>
+                    Reduce stimulating activities and
+                    bright screens close to bedtime.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                💧
+
+                <h3>
+                    Healthy Hydration
+                </h3>
+
+                <p>
+                    Stay adequately hydrated during
+                    the day while avoiding excessive
+                    fluids immediately before bed.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🛏️
+
+                <h3>
+                    Sleep Environment
+                </h3>
+
+                <p>
+                    Keep your bedroom comfortable,
+                    quiet and suitable for sleeping.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INSOMNIA RESULT
+    ====================================== -->
+
+    {% elif prediction == "Insomnia" %}
+
+
+    <div class="prediction-card insomnia-result">
+
+        <div class="result-icon">
+            🌙
+        </div>
+
+        <div class="risk-badge moderate-risk">
+
+    🟠 MODERATE RISK DETECTED
+
+</div>
+
+<p class="result-small">
+
+    RANDOM FOREST ANALYSIS
+
+</p>
+
+<h2>
+
+    Possible Insomnia Detected
+
+</h2>
+
+<p>
+
+    Based on the health information you entered,
+    our Random Forest model predicts a sleep
+    pattern consistent with insomnia.
+
+</p>
+
+        <p>
+            Insomnia refers to repeated difficulty
+            falling asleep, staying asleep, or
+            obtaining refreshing sleep despite
+            having an opportunity to sleep.
+        </p>
+
+    </div>
+    <div class="warning-box">
+
+    <h3>
+
+        ⚠ Moderate Risk Warning
+
+    </h3>
+
+    <p>
+
+        Insomnia may affect concentration,
+        mood, productivity and overall
+        quality of life if it continues
+        for a long period.
+
+    </p>
+
+    <strong>
+
+        If your sleep problems persist for
+        several weeks, consult a sleep
+        specialist or physician.
+
+    </strong>
+
+</div>
+
+
+    <!-- INSOMNIA SYMPTOMS -->
+
+    <div class="result-section">
+        <div class="insomnia-warning">
+
+<h3>
+
+🌙 Consider consulting a doctor if you have
+
+</h3>
+
+<ul>
+
+<li>Difficulty falling asleep most nights</li>
+
+<li>Frequent awakenings during the night</li>
+
+<li>Waking too early every morning</li>
+
+<li>Daytime tiredness</li>
+
+<li>Poor concentration</li>
+
+<li>Mood changes or irritability</li>
+
+<li>Symptoms lasting more than 3 weeks</li>
+
+</ul>
+
+</div>
+        <h2>
+            🔎 Common Insomnia Symptoms
+        </h2>
+
+        <p class="section-description">
+            People experiencing insomnia may notice
+            some of the following symptoms.
+        </p>
+
+
+        <div class="symptom-grid">
+
+            <div>
+                ✓ Difficulty falling asleep
+            </div>
+
+            <div>
+                ✓ Waking repeatedly during the night
+            </div>
+
+            <div>
+                ✓ Waking earlier than intended
+            </div>
+
+            <div>
+                ✓ Difficulty returning to sleep
+            </div>
+
+            <div>
+                ✓ Feeling tired during the daytime
+            </div>
+
+            <div>
+                ✓ Difficulty concentrating
+            </div>
+
+            <div>
+                ✓ Irritability or mood changes
+            </div>
+
+            <div>
+                ✓ Feeling unrefreshed after sleeping
+            </div>
+
+            <div>
+                ✓ Low daytime energy
+            </div>
+
+            <div>
+                ✓ Worrying about being unable to sleep
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INSOMNIA TIPS -->
+
+    <div class="result-section">
+
+        <h2>
+            ❤️ Sleep & Lifestyle Suggestions
+        </h2>
+
+
+        <div class="tip-grid">
+
+
+            <div class="tip-card">
+
+                🕐
+
+                <h3>
+                    Consistent Schedule
+                </h3>
+
+                <p>
+                    Maintain regular sleeping and
+                    waking times, including weekends
+                    where possible.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                ☕
+
+                <h3>
+                    Watch Caffeine
+                </h3>
+
+                <p>
+                    Avoid caffeine late in the day
+                    if you notice that it interferes
+                    with your sleep.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🥗
+
+                <h3>
+                    Evening Meals
+                </h3>
+
+                <p>
+                    Avoid very heavy meals immediately
+                    before going to bed.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🧘
+
+                <h3>
+                    Relaxation
+                </h3>
+
+                <p>
+                    Try a relaxing pre-sleep routine,
+                    such as gentle stretching,
+                    meditation or breathing exercises.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🚶
+
+                <h3>
+                    Daytime Activity
+                </h3>
+
+                <p>
+                    Regular daytime movement and
+                    appropriate exercise may support
+                    better sleep.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                📱
+
+                <h3>
+                    Reduce Stimulation
+                </h3>
+
+                <p>
+                    Reduce stimulating activities
+                    and bright screens close to
+                    bedtime.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🛏️
+
+                <h3>
+                    Comfortable Bedroom
+                </h3>
+
+                <p>
+                    Create a quiet and comfortable
+                    environment that supports sleep.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                👨‍⚕️
+
+                <h3>
+                    Seek Professional Advice
+                </h3>
+
+                <p>
+                    If sleep difficulties persist or
+                    significantly affect daily life,
+                    consider discussing them with a
+                    qualified healthcare professional.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         SLEEP APNEA RESULT
+    ====================================== -->
+
+    {% elif prediction == "Sleep Apnea" %}
+
+
+    <div class="prediction-card apnea-result">
+
+        <div class="result-icon">
+            🫁
+        </div>
+
+        <div class="risk-badge high-risk">
+
+    🔴 HIGH RISK DETECTED
+</div>
+
+<p class="result-small">
+
+    RANDOM FOREST ANALYSIS
+
+</p>
+
+<h2>
+
+    Possible Sleep Apnea Detected
+    <div class="risk-meter">
+
+
+</h2>
+
+        <p>
+            Sleep apnea is a sleep disorder in which
+            breathing repeatedly stops or becomes
+            shallow during sleep. Because this happens
+            while sleeping, people may not always
+            recognise it themselves.
+        </p>
+
+    </div>
+
+    <div class="danger-box">
+
+    <h3>
+
+        ⚠ Important Warning
+
+    </h3>
+
+    <p>
+
+        Sleep apnea can reduce oxygen levels
+        during sleep and may increase the risk
+        of cardiovascular and other health
+        complications.
+
+    </p>
+
+    <strong>
+
+        Please consult a qualified sleep
+        specialist if these symptoms persist.
+
+    </strong>
+
+</div>
+<div class="emergency-card">
+
+<h3>
+
+🚨 Seek medical advice if you have
+
+</h3>
+
+<ul>
+
+<li>Loud snoring almost every night</li>
+
+<li>Breathing pauses during sleep</li>
+
+<li>Waking up gasping for air</li>
+
+<li>Extreme daytime sleepiness</li>
+
+<li>Morning headaches</li>
+
+<li>Difficulty concentrating</li>
+
+</ul>
+
+</div>
+
+    <!-- SLEEP APNEA SYMPTOMS -->
+
+    <div class="result-section">
+
+        <h2>
+            🔎 Common Sleep Apnea Signs
+        </h2>
+
+        <p class="section-description">
+            Some commonly reported signs associated
+            with sleep apnea include:
+        </p>
+
+
+        <div class="symptom-grid">
+
+            <div>
+                ✓ Loud or frequent snoring
+            </div>
+
+            <div>
+                ✓ Breathing pauses during sleep
+            </div>
+
+            <div>
+                ✓ Gasping or choking during sleep
+            </div>
+
+            <div>
+                ✓ Excessive daytime sleepiness
+            </div>
+
+            <div>
+                ✓ Morning headaches
+            </div>
+
+            <div>
+                ✓ Dry mouth after waking
+            </div>
+
+            <div>
+                ✓ Difficulty concentrating
+            </div>
+
+            <div>
+                ✓ Feeling unrefreshed after sleeping
+            </div>
+
+            <div>
+                ✓ Irritability or mood changes
+            </div>
+
+            <div>
+                ✓ Frequent nighttime waking
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLEEP APNEA TIPS -->
+
+    <div class="result-section">
+
+        <h2>
+            ❤️ Health & Lifestyle Suggestions
+        </h2>
+
+
+        <div class="tip-grid">
+
+
+            <div class="tip-card">
+
+                👨‍⚕️
+
+                <h3>
+                    Medical Evaluation
+                </h3>
+
+                <p>
+                    Persistent breathing pauses,
+                    choking during sleep or significant
+                    daytime sleepiness should be
+                    discussed with a healthcare
+                    professional.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🏃
+
+                <h3>
+                    Stay Active
+                </h3>
+
+                <p>
+                    Appropriate regular physical
+                    activity can support overall
+                    health and sleep.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🥗
+
+                <h3>
+                    Balanced Diet
+                </h3>
+
+                <p>
+                    Follow a balanced eating pattern
+                    including vegetables, fruits,
+                    whole grains and suitable
+                    protein sources.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🕐
+
+                <h3>
+                    Regular Sleep Routine
+                </h3>
+
+                <p>
+                    Maintain consistent sleep and
+                    wake times where possible.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                🛏️
+
+                <h3>
+                    Sleep Environment
+                </h3>
+
+                <p>
+                    Maintain a comfortable and
+                    relaxing environment for sleep.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                📝
+
+                <h3>
+                    Track Your Symptoms
+                </h3>
+
+                <p>
+                    Keep track of symptoms such as
+                    snoring, daytime sleepiness and
+                    nighttime awakenings to discuss
+                    with your healthcare professional.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {% endif %}
+
+
+
+    <!-- =====================================
+         USER FACTORS
+    ====================================== -->
+
+    <div class="result-section">
+
+        <h2>
+            📊 Your Reported Sleep Factors
+        </h2>
+
+        <p class="section-description">
+            These are some of the values you provided
+            during your assessment.
+        </p>
+
+
+        <div class="factor-grid">
+
+
+            <div class="factor">
+
+                <span>
+                    Sleep Duration
+                </span>
+
+                <strong>
+                    {{ sleep_duration }} hrs
+                </strong>
+
+            </div>
+
+
+            <div class="factor">
+
+                <span>
+                    Sleep Quality
+                </span>
+
+                <strong>
+                    {{ quality_sleep }}/10
+                </strong>
+
+            </div>
+
+
+            <div class="factor">
+
+                <span>
+                    Stress Level
+                </span>
+
+                <strong>
+                    {{ stress }}/10
+                </strong>
+
+            </div>
+
+
+            <div class="factor">
+
+                <span>
+                    Physical Activity
+                </span>
+
+                <strong>
+                    {{ physical_activity }}
+                </strong>
+
+            </div>
+
+
+            <div class="factor">
+
+                <span>
+                    Daily Steps
+                </span>
+
+                <strong>
+                    {{ daily_steps }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MEDICAL DISCLAIMER
+    ====================================== -->
+
+    <div class="medical-warning">
+
+        <strong>
+            ⚕️ Important
+        </strong>
+
+        <p>
+            SleepWell is an educational
+            machine-learning project and does not
+            diagnose medical conditions.
+
+            A prediction of insomnia or sleep apnea
+            does not confirm that you have the
+            condition.
+
+            Persistent or concerning symptoms should
+            be evaluated by a qualified healthcare
+            professional.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================
+         FIND PROFESSIONAL CARE
+    ====================================== -->
+
+    <div class="care-section">
+
+        <div class="care-icon">
+            📍
+        </div>
+
+        <p class="tagline">
+            PROFESSIONAL CARE
+        </p>
+
+        <h2>
+            ⚠ Consult a Sleep Specialist Near You
+        </h2>
+
+
+        {% if prediction == "Sleep Apnea" %}
+
+        <p class="care-description">
+
+            Your result shows a pattern associated
+            with sleep apnea.
+
+            You can search for nearby hospitals,
+            sleep clinics, pulmonologists and ENT
+            specialists.
+
+        </p>
+
+
+        {% elif prediction == "Insomnia" %}
+
+        <p class="care-description">
+
+            Your result shows a pattern associated
+            with insomnia.
+
+            You can search for nearby sleep clinics,
+            neurologists and other appropriate
+            sleep-care professionals.
+
+        </p>
+
+
+        {% else %}
+
+        <p class="care-description">
+
+            You can search for nearby sleep clinics
+            or healthcare professionals if you have
+            concerns about your sleep.
+
+        </p>
+
+        {% endif %}
+
+
+
+        <!-- Store prediction for JavaScript -->
+
+        <input
+            type="hidden"
+            id="sleep-condition"
+            value="{{ prediction }}"
+        >
+
+
+
+        <!-- USE CURRENT LOCATION -->
+
+        <button
+            type="button"
+            onclick="findSleepCare()"
+            class="location-btn">
+
+            🔴 Find Sleep Specialists Near Me
+
+        </button>
+
+
+
+        <!-- OR -->
+
+        <div class="or-divider">
+
+            <span>
+                OR
+            </span>
+
+        </div>
+
+
+
+        <!-- MANUAL CITY SEARCH -->
+
+        <div class="city-search">
+
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter city, area or PIN code"
+            >
+
+            <button
+                type="button"
+                onclick="searchByCity()">
+
+                Search Care
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LOCATION MESSAGE -->
+
+        <p id="location-status"></p>
+
+
+
+        <!-- =================================
+             SPECIALIST RECOMMENDATION
+        ================================== -->
+
+        <div class="specialist-info">
+
+
+            {% if prediction == "Sleep Apnea" %}
+
+            <h3>
+                🫁 Specialists to Consider
+            </h3>
+
+            <p>
+
+<span>🫁 Sleep Medicine</span>
+
+<span>❤️ Pulmonologist</span>
+
+<span>👂 ENT Specialist</span>
+
+</p>
+
+
+            {% elif prediction == "Insomnia" %}
+
+            <h3>
+                🌙 Specialists to Consider
+            </h3>
+
+           <p>
+
+<span>🌙 Sleep Medicine</span>
+
+<span>🧠 Neurologist</span>
+
+<span>💙 Behavioural Sleep Care</span>
+
+</p>
+
+
+            {% else %}
+
+            <h3>
+                👨‍⚕️ Sleep Health Professionals
+            </h3>
+
+           <p>
+
+<span>🌙 Sleep Medicine</span>
+
+<span>👨‍⚕️ General Physician</span>
+
+</p>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         RETAKE ASSESSMENT
+    ====================================== -->
+
+    <div class="result-buttons">
+
+        <a
+            href="/assessment"
+            class="secondary-result-btn">
+
+            ← Retake Assessment
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================
+     LOCATION JAVASCRIPT
+====================================== -->
+
+<script
+    src="{{ url_for('static',
+    filename='js/location.js') }}">
+</script>
+
+
+</body>
+
+</html>

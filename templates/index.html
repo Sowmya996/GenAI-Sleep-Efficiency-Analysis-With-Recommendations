@@ -1,0 +1,151 @@
+index.html
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SleepWell | Sleep Health Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🌙 SleepWell
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/assessment">Sleep Assessment</a>
+            <a href="#about">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <!-- LEFT SIDE -->
+        <div class="hero-content">
+
+            <p class="tagline">
+                YOUR PERSONAL SLEEP HEALTH ASSISTANT
+            </p>
+
+            <h1>
+                Better Sleep.<br>
+                <span>Better You.</span>
+            </h1>
+
+            <p class="description">
+                Understand your sleep patterns and discover possible
+                sleep-related problems using machine learning.
+                Get personalised lifestyle recommendations and guidance
+                for improving your sleep health.
+            </p>
+
+
+            <!-- THIS BUTTON OPENS THE ASSESSMENT PAGE -->
+
+            <a href="/assessment" class="start-btn">
+                Check My Sleep Health →
+            </a>
+
+        </div>
+
+
+        <!-- RIGHT SIDE CARD -->
+        <div class="sleep-card">
+
+            <div class="moon">
+                🌙
+            </div>
+
+            <h2>
+                How well are you sleeping?
+            </h2>
+
+            <p>
+                Take our quick sleep health assessment and understand
+                what your sleeping habits may be telling you.
+            </p>
+
+
+            <!-- FEATURES -->
+            <div class="features">
+
+                <div>
+                    <span>🧠</span>
+                    <p>ML Sleep Analysis</p>
+                </div>
+
+                <div>
+                    <span>❤️</span>
+                    <p>Health Tips</p>
+                </div>
+
+                <div>
+                    <span>📍</span>
+                    <p>Find Care</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" style="
+        padding: 80px 8%;
+        text-align: center;
+        background: rgba(255,255,255,0.03);
+    ">
+
+        <p class="tagline">
+            ABOUT SLEEPWELL
+        </p>
+
+        <h2 style="
+            font-size: 35px;
+            margin-bottom: 20px;
+        ">
+            Understand Your Sleep Health
+        </h2>
+
+        <p style="
+            max-width: 750px;
+            margin: auto;
+            color: #c6cee1;
+            line-height: 1.8;
+        ">
+
+            SleepWell uses machine learning to analyse information
+            about your sleep, lifestyle and general health.
+
+            Based on your responses, the system identifies sleep
+            patterns associated with healthy sleep, insomnia or
+            sleep apnea and provides easy-to-understand information
+            and lifestyle recommendations.
+
+        </p>
+
+    </section>
+
+
+</body>
+
+</html>
